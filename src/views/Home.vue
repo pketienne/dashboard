@@ -1,18 +1,26 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Host
+      v-for="host in $store.state.hosts"
+      :key="host.fqdn"
+      :host="host"
+    >
+    </Host>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import Host from '@/components/Host.vue'
 export default {
   name: 'home',
   components: {
-    HelloWorld
+    Host
   }
 }
 </script>
+
+<style scoped>
+.home {
+  background: url('../assets/interlaced.png')
+}
+</style>
