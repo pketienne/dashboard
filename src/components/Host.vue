@@ -1,16 +1,20 @@
 <template>
   <div>
-    <b-container>
-      <b-row>
-        <b-col>
-          <PieChart :id="`${id}-cpu`" :height="150" :width="150" :wedges="wedges1"></PieChart>
-          <PieChart :id="`${id}-ram`" :height="150" :width="150" :wedges="wedges2"></PieChart>
-        </b-col>
-        <b-col>
-          <VMTable :host="host"></VMTable>
-        </b-col>
-      </b-row>
-    </b-container>
+    <b-card class="card">
+      <b-card-header style="max-width: 35rem; min-width: 30rem;">
+        <b-row>
+          <b-col class="center">
+            <PieChart :id="`${id}-cpu`" :height="150" :width="150" :wedges="wedges1"></PieChart>
+          </b-col>
+          <b-col class="center">
+            <PieChart :id="`${id}-ram`" :height="150" :width="150" :wedges="wedges2"></PieChart>
+          </b-col>
+        </b-row>
+      </b-card-header>
+      <b-card-body>
+        <VMTable style="max-width: 35rem; min-width: 30rem;" :host="host"></VMTable>
+      </b-card-body>
+    </b-card>
   </div>
 </template>
 
@@ -60,4 +64,14 @@ export default {
 </script>
 
 <style scoped>
+.card {
+  max-width: 35rem;
+  min-width: 35rem;
+  margin-bottom: 30px;
+}
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 </style>

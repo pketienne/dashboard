@@ -1,11 +1,13 @@
 <template>
   <div class="home">
-    <Host
-      v-for="host in $store.state.hosts"
-      :key="host.fqdn"
-      :host="host"
-    >
-    </Host>
+    <b-card-group class="center" deck>
+      <Host
+        v-for="host in $store.state.hosts"
+        :key="host.fqdn"
+        :host="host"
+      >
+      </Host>
+    </b-card-group>
   </div>
 </template>
 
@@ -21,6 +23,12 @@ export default {
 
 <style scoped>
 .home {
-  background: url('../assets/interlaced.png')
+  background: url('../assets/interlaced.png');
+  padding: 30px;
+}
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>
