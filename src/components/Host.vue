@@ -6,18 +6,7 @@
         <b-container>
           <b-row>
             <b-col class="center align-top">
-              <!-- <PieChart :id="`${id}-cpu`" :height="150" :width="150" :wedges="wedges1"></PieChart> -->
               <HighChart :host="host"></HighChart>
-              <HighChart :host="host"></HighChart>
-            </b-col>
-            <b-col class="center align-top">
-              <!-- <PieChart :id="`${id}-ram`" :height="150" :width="150" :wedges="wedges2"></PieChart> -->
-            </b-col>
-            <b-col>
-              <ul>
-                <li v-for="vm in host.vms">{{ vm.fqdn.split('.')[0] }}</li>
-                <li>unallocated</li>
-              </ul>
             </b-col>
           </b-row>
           <b-row>

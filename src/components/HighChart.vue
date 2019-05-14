@@ -20,16 +20,13 @@ export default {
           chartBorderWidth: 0,
           plotShadow: false,
           height: 200,
-          width: 200,
-        },
-        title: {
-          text: 'Cores',
-          align: 'center',
-          verticalAlign: 'middle',
-          y: 5
+          width: 550,
         },
         tooltip: {
           pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        title: {
+          text: null
         },
         plotOptions: {
           pie: {
@@ -43,13 +40,29 @@ export default {
             },
           },
         },
+        legend: {
+          layout: 'vertical',
+          align: 'right',
+          verticalAlign: 'top',
+          floating: true,
+        },
         series: [
           {
             type: 'pie',
-            name: 'Browser share',
+            name: 'core',
             innerSize: '50%',
-            data: this.hostData()
-          }
+            center: ['80','70'],
+            data: this.core(),
+            showInLegend: true,
+          },
+          {
+            type: 'pie',
+            name: 'ram',
+            innerSize: '50%',
+            center: ['275','70'],
+            data: this.ram(),
+            showInLegend: false,
+          },
         ],
         credits: {
           enabled: false,
@@ -58,11 +71,22 @@ export default {
     }
   },
   methods: {
-    hostData: function () {
+    core: function () {
       return this.host.vms.map(function(o) {
         return {
           name: o.fqdn.split('.')[0],
           y: o.cores,
+          dataLabels: {
+            enabled: false
+          }
+        }
+      })
+    },
+    ram: function () {
+      return this.host.vms.map(function(o) {
+        return {
+          name: o.fqdn.split('.')[0],
+          y: o.ram,
           dataLabels: {
             enabled: false
           }
