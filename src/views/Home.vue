@@ -31,4 +31,7 @@ export default {
   align-items: center;
   justify-content: center;
 }
+.card-body {
+  padding: 0;
+}
 </style>

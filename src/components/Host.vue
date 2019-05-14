@@ -1,18 +1,29 @@
 <template>
-  <div>
-    <b-card class="card">
-      <b-card-header style="max-width: 35rem; min-width: 30rem;">
-        <b-row>
-          <b-col class="center">
-            <PieChart :id="`${id}-cpu`" :height="150" :width="150" :wedges="wedges1"></PieChart>
-          </b-col>
-          <b-col class="center">
-            <PieChart :id="`${id}-ram`" :height="150" :width="150" :wedges="wedges2"></PieChart>
-          </b-col>
-        </b-row>
-      </b-card-header>
+  <div class="host">
+    <b-card>
+      <b-card-header>{{ host.fqdn }}</b-card-header>
       <b-card-body>
-        <VMTable style="max-width: 35rem; min-width: 30rem;" :host="host"></VMTable>
+        <b-container>
+          <b-row>
+            <b-col class="center align-top">
+              <!-- <PieChart :id="`${id}-cpu`" :height="150" :width="150" :wedges="wedges1"></PieChart> -->
+              <HighChart :host="host"></HighChart>
+              <HighChart :host="host"></HighChart>
+            </b-col>
+            <b-col class="center align-top">
+              <!-- <PieChart :id="`${id}-ram`" :height="150" :width="150" :wedges="wedges2"></PieChart> -->
+            </b-col>
+            <b-col>
+              <ul>
+                <li v-for="vm in host.vms">{{ vm.fqdn.split('.')[0] }}</li>
+                <li>unallocated</li>
+              </ul>
+            </b-col>
+          </b-row>
+          <b-row>
+            <VMTable class="vmtable" :host="host"></VMTable>
+          </b-row>
+        </b-container>
       </b-card-body>
     </b-card>
   </div>
@@ -21,15 +32,19 @@
 <script>
 import PieChart from '@/components/PieChart.vue'
 import VMTable from '@/components/VMTable.vue'
+import HighChart from '@/components/HighChart.vue'
 export default {
   name: 'Host',
-  components: { PieChart, VMTable },
+  components: { PieChart, VMTable, HighChart },
   props: {
     host: Object,
   },
   computed: {
     id() {
       return this.host.fqdn.split('.')[0]
+    },
+    vmid(vm) {
+      return vm.fqdn.split('.')[0]
     },
     wedges1() {
       let collection = [];
@@ -42,7 +57,6 @@ export default {
       } else if(sum < this.host.cores) {
         collection.splice(0, 0, 1 - sum);
       }
-      console.log(collection);
       return collection;
     },
     wedges2() {
@@ -56,7 +70,6 @@ export default {
       } else if(sum < this.host.cores) {
         collection.splice(0, 0, 1 - sum);
       }
-      console.log(collection);
       return collection;
     },
   },
@@ -64,10 +77,26 @@ export default {
 </script>
 
 <style scoped>
+.host {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 15px;
+}
 .card {
   max-width: 35rem;
   min-width: 35rem;
-  margin-bottom: 30px;
+  margin: 0;
+  padding: 0;
+}
+.card-body {
+  padding: 0;
+}
+.vmtable {
+  max-width: 35rem;
+  min-width: 30rem;
+}
+.col {
+  padding: 0;
 }
 .center {
   display: flex;

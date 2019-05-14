@@ -23,7 +23,7 @@ export default {
         { key: 'fqdn', sortable: true },
         { key: 'cores', sortable: true },
         { key: 'ram', sortable: true },
-        { key: 'powered', sortable: true },
+        { key: 'power', sortable: true },
         { key: 'status', sortable: true },
       ]
     }

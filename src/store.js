@@ -15,7 +15,7 @@ export default new Vuex.Store({
         cores: 32,
         ram: 24,
         rom: [],
-        powered: true,
+        power: 'on',
         status: 'green',
         vms: [
           {
@@ -24,7 +24,7 @@ export default new Vuex.Store({
             cores: 10,
             ram: 4,
             rom: [],
-            powered: true,
+            power: 'on',
             status: 'green',
           },
           {
@@ -33,7 +33,7 @@ export default new Vuex.Store({
             cores: 10,
             ram: 4,
             rom: [],
-            powered: true,
+            power: 'on',
             status: 'green',
           },
           {
@@ -42,7 +42,7 @@ export default new Vuex.Store({
             cores: 5,
             ram: 4,
             rom: [],
-            powered: true,
+            power: 'on',
             status: 'green',
           },
           {
@@ -51,7 +51,7 @@ export default new Vuex.Store({
             cores: 5,
             ram: 4,
             rom: [],
-            powered: true,
+            power: 'on',
             status: 'green',
           },
           {
@@ -60,7 +60,7 @@ export default new Vuex.Store({
             cores: 2,
             ram: 4,
             rom: [],
-            powered: true,
+            power: 'on',
             status: 'green',
           },
         ],
@@ -71,8 +71,9 @@ export default new Vuex.Store({
         cores: 32,
         ram: 24,
         rom: [],
-        powered: true,
+        power: 'on',
         status: 'green',
+        vms: [],
       },
       {
         fqdn: 'reznor.sca.iu.edu',
@@ -80,8 +81,9 @@ export default new Vuex.Store({
         cores: 32,
         ram: 24,
         rom: [],
-        powered: true,
+        power: 'on',
         status: 'green',
+        vms: [],
       },
       {
         fqdn: 'jett.sca.iu.edu',
@@ -89,7 +91,7 @@ export default new Vuex.Store({
         cores: 32,
         ram: 24,
         rom: [],
-        powered: true,
+        power: 'on',
         status: 'green',
         vms: [
           {
@@ -98,7 +100,7 @@ export default new Vuex.Store({
             cores: 10,
             ram: 4,
             rom: [],
-            powered: true,
+            power: 'on',
             status: 'green',
           },
           {
@@ -107,7 +109,7 @@ export default new Vuex.Store({
             cores: 12,
             ram: 4,
             rom: [],
-            powered: true,
+            power: 'on',
             status: 'green',
           },
           {
@@ -116,7 +118,7 @@ export default new Vuex.Store({
             cores: 5,
             ram: 4,
             rom: [],
-            powered: true,
+            power: 'on',
             status: 'green',
           },
         ],
@@ -127,7 +129,7 @@ export default new Vuex.Store({
         cores: 32,
         ram: 24,
         rom: [],
-        powered: true,
+        power: 'on',
         status: 'green',
         vms: [
           {
@@ -136,7 +138,7 @@ export default new Vuex.Store({
             cores: 20,
             ram: 4,
             rom: [],
-            powered: true,
+            power: 'on',
             status: 'green',
           },
           {
@@ -145,7 +147,7 @@ export default new Vuex.Store({
             cores: 6,
             ram: 4,
             rom: [],
-            powered: true,
+            power: 'on',
             status: 'green',
           },
           {
@@ -154,7 +156,7 @@ export default new Vuex.Store({
             cores: 2,
             ram: 4,
             rom: [],
-            powered: true,
+            power: 'on',
             status: 'green',
           },
         ],
@@ -165,7 +167,7 @@ export default new Vuex.Store({
         cores: 32,
         ram: 24,
         rom: [],
-        powered: true,
+        power: 'on',
         status: 'green',
         vms: [
           {
@@ -174,7 +176,7 @@ export default new Vuex.Store({
             cores: 32,
             ram: 4,
             rom: [],
-            powered: true,
+            power: 'on',
             status: 'green',
           },
         ],
@@ -185,7 +187,7 @@ export default new Vuex.Store({
         cores: 32,
         ram: 24,
         rom: [],
-        powered: true,
+        power: 'on',
         status: 'green',
         vms: [
           {
@@ -194,7 +196,7 @@ export default new Vuex.Store({
             cores: 10,
             ram: 4,
             rom: [],
-            powered: true,
+            power: 'on',
             status: 'green',
           },
           {
@@ -203,7 +205,7 @@ export default new Vuex.Store({
             cores: 10,
             ram: 4,
             rom: [],
-            powered: true,
+            power: 'on',
             status: 'green',
           },
           {
@@ -212,7 +214,7 @@ export default new Vuex.Store({
             cores: 10,
             ram: 4,
             rom: [],
-            powered: true,
+            power: 'on',
             status: 'green',
           },
         ],
@@ -223,7 +225,7 @@ export default new Vuex.Store({
         cores: 32,
         ram: 24,
         rom: [],
-        powered: true,
+        power: 'on',
         status: 'green',
         vms: [
           {
@@ -232,7 +234,7 @@ export default new Vuex.Store({
             cores: 5,
             ram: 4,
             rom: [],
-            powered: true,
+            power: 'on',
             status: 'green',
           },
           {
@@ -241,7 +243,7 @@ export default new Vuex.Store({
             cores: 5,
             ram: 4,
             rom: [],
-            powered: true,
+            power: 'on',
             status: 'green',
           },
           {
@@ -250,7 +252,7 @@ export default new Vuex.Store({
             cores: 5,
             ram: 4,
             rom: [],
-            powered: true,
+            power: 'on',
             status: 'green',
           },
           {
@@ -259,7 +261,7 @@ export default new Vuex.Store({
             cores: 3,
             ram: 4,
             rom: [],
-            powered: true,
+            power: 'on',
             status: 'green',
           },
           {
@@ -268,7 +270,7 @@ export default new Vuex.Store({
             cores: 2,
             ram: 4,
             rom: [],
-            powered: true,
+            power: 'on',
             status: 'green',
           },
           {
@@ -277,7 +279,7 @@ export default new Vuex.Store({
             cores: 2,
             ram: 4,
             rom: [],
-            powered: true,
+            power: 'on',
             status: 'green',
           },
           {
@@ -286,7 +288,7 @@ export default new Vuex.Store({
             cores: 1,
             ram: 4,
             rom: [],
-            powered: true,
+            power: 'on',
             status: 'green',
           },
           {
@@ -295,7 +297,7 @@ export default new Vuex.Store({
             cores: 1,
             ram: 4,
             rom: [],
-            powered: true,
+            power: 'on',
             status: 'green',
           },
         ],
@@ -306,8 +308,9 @@ export default new Vuex.Store({
         cores: 32,
         ram: 24,
         rom: [],
-        powered: true,
+        power: 'on',
         status: 'green',
+        vms: [],
       },
       {
         fqdn: 'howlett.sca.iu.edu',
@@ -315,7 +318,7 @@ export default new Vuex.Store({
         cores: 32,
         ram: 24,
         rom: [],
-        powered: true,
+        power: 'on',
         status: 'green',
         vms: [
           {
@@ -324,7 +327,7 @@ export default new Vuex.Store({
             cores: 16,
             ram: 4,
             rom: [],
-            powered: true,
+            power: 'on',
             status: 'green',
           },
         ],
